@@ -1,0 +1,138 @@
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-in-out;
+}
+
+/* Chat message styling */
+.message-bubble {
+  @apply rounded-lg px-4 py-2 max-w-xs;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.message-user {
+  @apply message-bubble bg-sky-600 text-white ml-auto;
+}
+
+.message-bot {
+  @apply message-bubble bg-gray-200 text-gray-900;
+}
+
+.dark .message-bot {
+  @apply bg-gray-700 text-white;
+}
+
+/* Typing indicator */
+.typing-indicator span {
+  @apply inline-block w-2 h-2 bg-gray-900 rounded-full mx-1;
+  animation: bounce 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.dark .typing-indicator span {
+  @apply bg-white;
+}
+
+/* Button effects */
+button {
+  @apply transition-all;
+}
+
+button:hover {
+  @apply -translate-y-1;
+}
+
+button:active {
+  @apply translate-y-0;
+}
+
+/* Input focus */
+input:focus,
+textarea:focus {
+  @apply outline-none ring-2 ring-sky-500 ring-offset-0;
+}
+
+.dark input:focus,
+.dark textarea:focus {
+  @apply ring-sky-400;
+}
+
+/* Sentiment indicator */
+.sentiment-indicator {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.sentiment-positive {
+  @apply bg-green-100 text-green-800;
+}
+
+.sentiment-negative {
+  @apply bg-red-100 text-red-800;
+}
+
+.sentiment-neutral {
+  @apply bg-gray-100 text-gray-800;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .message-bubble {
+    @apply max-w-sm;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  @apply border-4 border-gray-300 border-t-sky-600 rounded-full;
+  animation: spin 1s linear infinite;
+}
