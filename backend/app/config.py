@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     rasa_model_path: str = "./rasa_nlu/models"
 
     # OpenAI
-    openai_api_key: str = "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"
+    openai_api_key: str = ""
     openai_model: str = "gpt-3.5-turbo"
     openai_temperature: float = 0.7
     openai_max_tokens: int = 500
